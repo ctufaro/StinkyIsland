@@ -1,0 +1,7 @@
+D:\Archived\Sandbox\Sandbox.CON\bin\Debug\Sandbox.CON.exe
+D:\Archived\Sandbox\Sandbox.CON\bin\Debug\Sandbox.CON.pdb
+D:\Archived\Sandbox\Sandbox.CON\bin\Debug\Sandbox.CL.dll
+D:\Archived\Sandbox\Sandbox.CON\bin\Debug\Sandbox.CL.pdb
+D:\Archived\Sandbox\Sandbox.CON\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\Archived\Sandbox\Sandbox.CON\obj\x86\Debug\Sandbox.CON.exe
+D:\Archived\Sandbox\Sandbox.CON\obj\x86\Debug\Sandbox.CON.pdb
