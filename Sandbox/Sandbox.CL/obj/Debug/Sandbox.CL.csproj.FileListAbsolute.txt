@@ -1,5 +1,0 @@
-D:\Archived\Sandbox\Sandbox.CL\bin\Debug\Sandbox.CL.dll
-D:\Archived\Sandbox\Sandbox.CL\bin\Debug\Sandbox.CL.pdb
-D:\Archived\Sandbox\Sandbox.CL\obj\Debug\ResolveAssemblyReference.cache
-D:\Archived\Sandbox\Sandbox.CL\obj\Debug\Sandbox.CL.dll
-D:\Archived\Sandbox\Sandbox.CL\obj\Debug\Sandbox.CL.pdb
