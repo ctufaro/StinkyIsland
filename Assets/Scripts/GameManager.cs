@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         //switch statement heres
-        print(gameState);
+        //print(gameState);
     }
 
     public void SetGameState(Enums.GameState gameState)

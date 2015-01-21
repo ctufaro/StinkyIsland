@@ -7,7 +7,7 @@ public class HeroBehavior : MonoBehaviour {
     
     // Use this for initialization
 	void Start () {
-        hero = ScriptableObject.CreateInstance<Hero>();
+        hero = gameObject.AddComponent<Hero>();
 	}
 	
 	// Update is called once per frame
@@ -15,12 +15,12 @@ public class HeroBehavior : MonoBehaviour {
 
         if (Input.GetButton("Fire1"))
         {
-            hero.Attack(new GasBlaster());
+            hero.Attack(Enums.Button.A, this.transform.position, this.transform.rotation);
         }
 
         if (Input.GetButton("Fire2"))
         {
-            hero.Attack(new VaccineGun());
+            hero.Attack(Enums.Button.B, this.transform.position, this.transform.rotation);
         }
 
 	}

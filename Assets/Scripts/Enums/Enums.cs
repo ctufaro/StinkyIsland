@@ -12,4 +12,12 @@ public class Enums : ScriptableObject {
         LostLife,
         GameOver
     }
+
+    public enum Button
+    {
+        A,
+        B,
+        C,
+        D
+    }
 }
