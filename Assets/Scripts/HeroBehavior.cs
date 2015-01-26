@@ -11,17 +11,28 @@ public class HeroBehavior : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-
-        if (Input.GetButton("Fire1"))
+	void Update ()
+    {
+        #region Button A Fire
+        if (CFInput.GetButton("Fire1"))
         {
             hero.Attack(Enums.Button.A, this.transform.position, this.transform.rotation);
         }
+        else if (CFInput.GetButtonUp("Fire1"))
+        {
+            hero.Shield();
+        }
+        #endregion
 
-        if (Input.GetButton("Fire2"))
+        #region Button B Fire
+        if (CFInput.GetButtonDown("Fire2"))
         {
             hero.Attack(Enums.Button.B, this.transform.position, this.transform.rotation);
         }
-
-	}
+        else if (CFInput.GetButtonUp("Fire2"))
+        {
+            hero.Shield();
+        }
+        #endregion
+    }
 }

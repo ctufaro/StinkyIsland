@@ -27,8 +27,8 @@ public class MainMenu : MonoBehaviour {
 
     void OnGUI()
     {
-        Rect buttonRect = new Rect((Screen.width / 2) - 70,(2 * Screen.height / 3) - 30,0,0);
-        GUI.Label(buttonRect,(displayLabel) ? "click to start game" : "", style);
+        //Rect buttonRect = new Rect((Screen.width / 2) - 70,(2 * Screen.height / 3) - 30,0,0);
+        //GUI.Label(buttonRect,(displayLabel) ? "click to start game" : "", style);
 
         if (Input.touchCount > 0 || Input.anyKey)
         {

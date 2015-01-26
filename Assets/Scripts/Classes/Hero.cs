@@ -49,6 +49,9 @@ public class Hero : MonoBehaviour, IHero
 
     public void Shield()
     {
-        throw new NotImplementedException();
+        foreach (var weapon in weapons)
+        {
+            weapon.Disengage();
+        }
     }
 }
