@@ -2,16 +2,25 @@
 using System.Collections;
 
 public class Enums : ScriptableObject {
+    
     public enum GameState
     {
         Splash,
         MainMenu,
-        Intro,
-        GetReady,
+        //Intro,
+        //GetReady,
         LevelRunning,
+        LevelComplete,
         LostLife,
         GameOver
     }
+
+    public enum MonsterType
+    {
+        Stenchie,
+        Trollie
+    }
+
 
     public enum Button
     {

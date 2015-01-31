@@ -6,9 +6,10 @@ using System.Collections;
 /// Singleton Game Manager Class
 /// </summary>
 public class GameManager : MonoBehaviour
-{
+{    
     public event EventHandler OnStateChange;
     public Enums.GameState gameState { get; private set; }
+    public Enums.GameState stateOverride;
     private static GameManager _instance = null;
 
     public static GameManager instance
@@ -42,12 +43,29 @@ public class GameManager : MonoBehaviour
             if (this != _instance)
                 Destroy(this.gameObject);
         }
+
+        //For Testing Purposes
+        if (stateOverride != null)
+        {
+            this.gameState = stateOverride;
+        }
     }
 
     void Update()
-    {
-        //switch statement heres
-        //print(gameState);
+    {        
+        switch (gameState)
+        {
+            case(Enums.GameState.Splash):
+                print(gameState);
+                break;
+            case(Enums.GameState.MainMenu):
+                print(gameState);
+                break;
+            default:
+                SetGameState(Enums.GameState.LevelRunning);
+                print("Let's Go!!");
+                break;
+        }
     }
 
     public void SetGameState(Enums.GameState gameState)

@@ -17,13 +17,53 @@ public class HeroMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        ManageMovement(CFInput.GetAxis("Horizontal"), CFInput.GetAxis("Vertical"));
+        #if UNITY_EDITOR
+            ManageMovementKeyboard();
+        #elif UNITY_WEBPLAYER
+            ManageMovementKeyboard();
+        #else
+            ManageMovementTouch();
+        #endif
     }
 
-    void ManageMovement(float horizontal, float vertical)
+    void ManageMovementKeyboard() 
     {
-        print(string.Format("Horizontal:{0}, Vertical{1}", horizontal, vertical));
+        float horizontal = Input.GetAxis("Horizontal");
+        float vertical = Input.GetAxis("Vertical");   
+        
+        if (animator)
+        {
+            if ((vertical > horizontal) && (vertical > 0))
+            {
+                animator.SetInteger("Direction", 1);
+            }
 
+            if ((vertical < horizontal) && (horizontal > 0))
+            {
+                animator.SetInteger("Direction", 4);
+            }
+
+            if ((vertical < horizontal) && (vertical < 0))
+            {
+                animator.SetInteger("Direction", 3);
+            }
+
+            if ((vertical > horizontal) && (horizontal < 0))
+            {
+                animator.SetInteger("Direction", 2);
+            }
+
+            animator.SetBool("Moving", (horizontal != 0f || vertical != 0f));
+            Vector3 movement = new Vector3(horizontal, vertical, 0);
+            rigidbody2D.velocity = movement * speed;
+        }
+    }
+
+    void ManageMovementTouch()
+    {
+        float horizontal = CFInput.GetAxis("Horizontal");
+        float vertical = CFInput.GetAxis("Vertical");        
+        
         if (animator)
         {
             if (tStick.GetFourWayDir() == TouchStick.StickDir.NEUTRAL)
@@ -52,33 +92,7 @@ public class HeroMovement : MonoBehaviour
                 case (TouchStick.StickDir.R):
                     animator.SetInteger("Direction", 4);
                     break;
-                //case (TouchStick.StickDir.NEUTRAL):
-                //    animator.SetBool("Moving", false);
-                //    break;
-
             }
-
-            //if ((vertical > horizontal) && (vertical > 0))
-            //{
-            //    animator.SetInteger("Direction", 1);
-            //}
-
-            //if ((vertical < horizontal) && (horizontal > 0))
-            //{
-            //    animator.SetInteger("Direction", 4);
-            //}
-
-            //if ((vertical < horizontal) && (vertical < 0))
-            //{
-            //    animator.SetInteger("Direction", 3);
-            //}
-
-            //if ((vertical > horizontal) && (horizontal < 0))
-            //{
-            //    animator.SetInteger("Direction", 2);
-            //} 
-
-
         }
     }
 
