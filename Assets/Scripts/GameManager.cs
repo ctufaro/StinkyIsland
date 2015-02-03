@@ -63,7 +63,7 @@ public class GameManager : MonoBehaviour
                 break;
             default:
                 SetGameState(Enums.GameState.LevelRunning);
-                print("Let's Go!!");
+                //print("Let's Go!!");
                 break;
         }
     }

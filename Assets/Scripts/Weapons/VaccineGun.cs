@@ -28,6 +28,7 @@ public class VaccineGun : AbstractWeapon
         puff.renderer.sortingLayerName = "Puff";
         Vector3 moveVector;
 
+        //TODO:refactor this
         switch (heroAnimator.GetInteger("Direction"))
         {
             case (0):
@@ -36,12 +37,14 @@ public class VaccineGun : AbstractWeapon
                 Instantiate(puff, new Vector3(moveVector.x, moveVector.y - .2f, 0f), Quaternion.identity);
                 dartPrefab = Instantiate(dart.GetComponent<Rigidbody2D>(), moveVector, Quaternion.identity) as Rigidbody2D;
                 dartPrefab.AddForce(transform.up * speed);
+                dartSortingLayer = "Dart";
                 break;
             case (2):
                 moveVector = new Vector3(transform.position.x - 0.576f, transform.position.y - 0.205f, 0f);
                 Instantiate(puff, new Vector3(moveVector.x + .2f,moveVector.y,0f), Quaternion.identity);
                 dartPrefab = Instantiate(dart.GetComponent<Rigidbody2D>(), moveVector, Quaternion.Euler(0, 0, 90f)) as Rigidbody2D;
                 dartPrefab.AddForce(-transform.right * speed);
+                dartSortingLayer = "Dart";
                 break;
             case (3):
                 moveVector = new Vector3(transform.position.x - 0.049f, transform.position.y - 0.657f, 0f);
@@ -55,6 +58,7 @@ public class VaccineGun : AbstractWeapon
                 Instantiate(puff, new Vector3(moveVector.x - .2f, moveVector.y, 0f), Quaternion.identity);
                 dartPrefab = Instantiate(dart.GetComponent<Rigidbody2D>(), moveVector, Quaternion.Euler(0, 0, 270f)) as Rigidbody2D;
                 dartPrefab.AddForce(transform.right * speed);
+                dartSortingLayer = "Dart";
                 break;
             default:
                 dartPrefab = null;

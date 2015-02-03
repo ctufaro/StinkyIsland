@@ -29,7 +29,7 @@ public class HeroMovement : MonoBehaviour
     void ManageMovementKeyboard() 
     {
         float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");   
+        float vertical = Input.GetAxis("Vertical");        
         
         if (animator)
         {

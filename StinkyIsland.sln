@@ -5,6 +5,8 @@ Project("{F7B90F97-8663-5381-6E62-429806536600}") = "StinkyIsland", "Assembly-CS
 EndProject
 Project("{F7B90F97-8663-5381-6E62-429806536600}") = "StinkyIsland", "Assembly-CSharp-Editor.csproj", "{FE95A624-3C24-F1DC-CAC8-45C567E39049}"
 EndProject
+Project("{F7B90F97-8663-5381-6E62-429806536600}") = "StinkyIsland", "Assembly-UnityScript.unityproj", "{9FA5DCBE-0263-38F8-5CC1-FABCE66A729B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,11 +21,15 @@ Global
 		{FE95A624-3C24-F1DC-CAC8-45C567E39049}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE95A624-3C24-F1DC-CAC8-45C567E39049}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FE95A624-3C24-F1DC-CAC8-45C567E39049}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FA5DCBE-0263-38F8-5CC1-FABCE66A729B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FA5DCBE-0263-38F8-5CC1-FABCE66A729B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FA5DCBE-0263-38F8-5CC1-FABCE66A729B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FA5DCBE-0263-38F8-5CC1-FABCE66A729B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-																																																														GlobalSection(MonoDevelopProperties) = preSolution
+																																																																								GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1
