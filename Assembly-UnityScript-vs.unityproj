@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\JS\CameraMovement.js" />
+     <None Include="Assets\Tiled2Unity\Imported\Level1Demo.tiled2unity.xml" />
      <None Include="Assets\JMO Assets\Cartoon FX\Shaders (Mobile)\CFXM_MobileParticleAdd_Alpha8.shader" />
      <None Include="Assets\Tiled2Unity\Prefabs\_ReadMe.txt" />
      <None Include="Assets\Tiled2Unity\Shaders\shaTiledMap.shader" />

@@ -82,12 +82,14 @@
      <Compile Include="Assets\Scripts\Interfaces\IWeapon.cs" />
      <Compile Include="Assets\Scripts\MainMenu.cs" />
      <Compile Include="Assets\Scripts\MonsterBehavior.cs" />
+     <Compile Include="Assets\Scripts\MonsterMovement.cs" />
      <Compile Include="Assets\Scripts\SplashMenu.cs" />
      <Compile Include="Assets\Scripts\Weapons\GasBlaster.cs" />
      <Compile Include="Assets\Scripts\Weapons\VaccineGun.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\SortingLayerExposed.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\TileAnimator.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\TiledMap.cs" />
+     <None Include="Assets\Tiled2Unity\Imported\Level1Demo.tiled2unity.xml" />
      <None Include="Assets\JMO Assets\Cartoon FX\Shaders (Mobile)\CFXM_MobileParticleAdd_Alpha8.shader" />
      <None Include="Assets\Tiled2Unity\Prefabs\_ReadMe.txt" />
      <None Include="Assets\Tiled2Unity\Shaders\shaTiledMap.shader" />
