@@ -19,44 +19,52 @@ public class MonsterMovement : MonoBehaviour {
     {
         if (animator)
         {
-            if (monster.MonsterFart && !monster.FartStarted)
+            if (monster.Collided)
             {
-                //no matter what I do, the fart gets skipped sometimes while the monster walks in place
-                animator.StopPlayback();
-                Fart();
+                animator.SetBool("Moving", false);
+                monster.Collided = false;
             }
-            else if (!monster.MonsterFart && !monster.FartStarted)
+            else
             {
-                float horizontal = monster.CurrentX;
-                float vertical = monster.CurrentY;
-                //print(horizontal);
-                //print(vertical);
-                if ((vertical > horizontal) && (vertical > 0))
+                if (monster.MonsterFart && !monster.FartStarted)
                 {
-                    animator.SetInteger("Direction", 1);
-                }
-
-                if ((vertical < horizontal) && (horizontal > 0))
-                {
-                    animator.SetInteger("Direction", 4);
-                }
-
-                if ((vertical < horizontal) && (vertical < 0))
-                {
-                    animator.SetInteger("Direction", 3);
-                }
-
-                if ((vertical > horizontal) && (horizontal < 0))
-                {
-                    animator.SetInteger("Direction", 2);
-                }
-
-                if (vertical == 0f && horizontal == 0f)
+                    //no matter what I do, the fart gets skipped sometimes while the monster walks in place
                     animator.StopPlayback();
+                    Fart();
+                }
+                else if (!monster.MonsterFart && !monster.FartStarted)
+                {
+                    float horizontal = monster.CurrentX;
+                    float vertical = monster.CurrentY;
+                    //print(horizontal);
+                    //print(vertical);
+                    if ((vertical > horizontal) && (vertical > 0))
+                    {
+                        animator.SetInteger("Direction", 1);
+                    }
 
-                animator.SetBool("Moving", (horizontal != 0f || vertical != 0f));
-                Vector3 movement = new Vector3(horizontal, vertical, 0);
-                rigidbody2D.velocity = movement * monster.Speed;
+                    if ((vertical < horizontal) && (horizontal > 0))
+                    {
+                        animator.SetInteger("Direction", 4);
+                    }
+
+                    if ((vertical < horizontal) && (vertical < 0))
+                    {
+                        animator.SetInteger("Direction", 3);
+                    }
+
+                    if ((vertical > horizontal) && (horizontal < 0))
+                    {
+                        animator.SetInteger("Direction", 2);
+                    }
+
+                    if (vertical == 0f && horizontal == 0f)
+                        animator.StopPlayback();
+
+                    animator.SetBool("Moving", (horizontal != 0f || vertical != 0f));
+                    Vector3 movement = new Vector3(horizontal, vertical, 0);
+                    rigidbody2D.velocity = movement * monster.Speed;
+                }
             }
         }        
     }
