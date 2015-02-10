@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{FE95A624-3C24-F1DC-CAC8-45C567E39049}</ProjectGuid>
+	<ProjectGuid>{8DFAB4C7-24D6-A0ED-61BA-D78D6852BD39}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -84,7 +84,7 @@
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.1/Editor/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="JMOAssets">
- <HintPath>C:/Users/Chris/My Projects/StinkyIsland/Assets/JMO Assets/Editor/JMOAssets.dll</HintPath>
+ <HintPath>C:/Users/Jtangowski/Documents/WORKSPACE/StinkyIslandTango/Assets/JMO Assets/Editor/JMOAssets.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Graphs">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
@@ -92,9 +92,9 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp.csproj">
-      <Project>{EB394715-EE65-73D1-639A-B8E6BFB7B990}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
+      <Project>{A58CE1EC-69BC-4241-CE04-751965986C84}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
     <ProjectReference Include="Assembly-UnityScript.unityproj">
-      <Project>{9FA5DCBE-0263-38F8-5CC1-FABCE66A729B}</Project>      <Name>Assembly-UnityScript</Name>    </ProjectReference>
+      <Project>{9CAE0427-847C-642C-D58D-BD6795C51718}</Project>      <Name>Assembly-UnityScript</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

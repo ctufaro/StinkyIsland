@@ -4,7 +4,6 @@ using System.Collections;
 public class MonsterMovement : MonoBehaviour {
 
     private Animator animator;
-    public float speed = 1.0f;
     private int firstDirection;
     private Monster monster;
     
@@ -57,22 +56,14 @@ public class MonsterMovement : MonoBehaviour {
 
                 animator.SetBool("Moving", (horizontal != 0f || vertical != 0f));
                 Vector3 movement = new Vector3(horizontal, vertical, 0);
-                rigidbody2D.velocity = movement * speed;
+                rigidbody2D.velocity = movement * monster.Speed;
             }
         }        
     }
 
     void Fart()
     {
-        //why doesn't this work every time? it completely misses the condition for the transition
-        animator.StopPlayback();
-        monster.FartStarted = true;
-        animator.SetBool("Moving", false);
-        //let the animation finish
 
-        animator.SetTrigger("Fart");
-        firstDirection = animator.GetInteger("Direction");
-        animator.SetInteger("Direction", 0);
         StartCoroutine("Dummy");
     }
 
@@ -89,6 +80,19 @@ public class MonsterMovement : MonoBehaviour {
 
     IEnumerator Dummy()
     {
+        //why doesn't this work every time? it completely misses the condition for the transition
+        //animator.StopPlayback();
+        monster.FartStarted = true;
+        animator.SetBool("Moving", false);
+        //let the animation finish
+
+        yield return new WaitForSeconds(1);
+        animator.SetTrigger("Fart");
+        firstDirection = animator.GetInteger("Direction");
+        animator.SetInteger("Direction", 0);
+
+
+
         yield return new WaitForSeconds(1);
         monster.MonsterFart = false;
         monster.FartStarted = false;
