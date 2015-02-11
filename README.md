@@ -1,4 +1,4 @@
-﻿# Stinky Island
+﻿# Stinky Island Mobile App
                                   _
                               ,--.\`-. __
                             _,.`. \:/,"  `-._
