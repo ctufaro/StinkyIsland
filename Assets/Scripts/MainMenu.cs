@@ -14,7 +14,6 @@ public class MainMenu : MonoBehaviour {
     void Start()
     {
         SetStyle();
-        Screen.orientation = ScreenOrientation.LandscapeLeft;
         StartCoroutine("Blink");
     }
 

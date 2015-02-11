@@ -6,6 +6,7 @@ public class HeroMovement : MonoBehaviour
     public float speed = 1.0f;
     private Animator animator;
     private TouchStick tStick;
+    private Vector3 movement;
 
     // Use this for initialization
     void Start()
@@ -54,9 +55,14 @@ public class HeroMovement : MonoBehaviour
             }
 
             animator.SetBool("Moving", (horizontal != 0f || vertical != 0f));
-            Vector3 movement = new Vector3(horizontal, vertical, 0);
-            rigidbody2D.velocity = movement * speed;
+            movement = new Vector3(horizontal, vertical, 0);
+            
         }
+    }
+
+    void FixedUpdate()
+    {
+        rigidbody2D.velocity = movement * speed;
     }
 
     void ManageMovementTouch()

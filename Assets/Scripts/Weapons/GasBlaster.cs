@@ -84,7 +84,8 @@ public class GasBlaster : AbstractWeapon
     }
 
     private void ConfigureSpray()
-    {
+    {       
+
         foreach (var spray in gasBlasterSystem)
         {
             spray.loop = true;

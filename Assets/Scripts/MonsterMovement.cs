@@ -1,37 +1,71 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MonsterMovement : MonoBehaviour {
+public class MonsterMovement : MonoBehaviour
+{
 
     private Animator animator;
-    public float speed = 1.0f;
     private int firstDirection;
-    
-    // Use this for initialization
-	void Start () {
-	    animator = GetComponent<Animator>();
-        StartCoroutine("Bummy");
-	}
-	
-	// Update is called once per frame
-	void Update()
-    {
-        //ManageMovementKeyboard();        
+    private Monster monster;
 
-        if (Input.GetKeyDown(KeyCode.Keypad5))
+    // Use this for initialization
+    void Start()
+    {
+        animator = GetComponent<Animator>();
+        monster = gameObject.AddComponent<Monster>();
+    }
+
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (animator)
         {
-            animator.SetTrigger("Fart");
-            firstDirection = animator.GetInteger("Direction");
-            animator.SetInteger("Direction", 0);
-            StartCoroutine("Dummy");
+            if (monster.MonsterFart && !monster.FartStarted)
+            {
+                //no matter what I do, the fart gets skipped sometimes while the monster walks in place
+                animator.StopPlayback();
+                Fart();
+            }
+            else if (!monster.MonsterFart && !monster.FartStarted)
+            {
+                float horizontal = monster.CurrentX;
+                float vertical = monster.CurrentY;
+                //print(horizontal);
+                //print(vertical);
+                if ((vertical > horizontal) && (vertical > 0))
+                {
+                    animator.SetInteger("Direction", 1);
+                }
+
+                if ((vertical < horizontal) && (horizontal > 0))
+                {
+                    animator.SetInteger("Direction", 4);
+                }
+
+                if ((vertical < horizontal) && (vertical < 0))
+                {
+                    animator.SetInteger("Direction", 3);
+                }
+
+                if ((vertical > horizontal) && (horizontal < 0))
+                {
+                    animator.SetInteger("Direction", 2);
+                }
+
+                if (vertical == 0f && horizontal == 0f)
+                    animator.StopPlayback();
+
+                animator.SetBool("Moving", (horizontal != 0f || vertical != 0f));
+                Vector3 movement = new Vector3(horizontal, vertical, 0);
+                rigidbody2D.velocity = movement * monster.Speed;
+            }
         }
     }
 
     void Fart()
     {
-        animator.SetTrigger("Fart");
-        firstDirection = animator.GetInteger("Direction");
-        animator.SetInteger("Direction", 0);
+
         StartCoroutine("Dummy");
     }
 
@@ -48,43 +82,24 @@ public class MonsterMovement : MonoBehaviour {
 
     IEnumerator Dummy()
     {
+        //why doesn't this work every time? it completely misses the condition for the transition
+        //animator.StopPlayback();
+        monster.FartStarted = true;
+        animator.SetBool("Moving", false);
+        //let the animation finish
+
         yield return new WaitForSeconds(1);
+        animator.SetTrigger("Fart");
+        firstDirection = animator.GetInteger("Direction");
+        animator.SetInteger("Direction", 0);
+
+
+
+        yield return new WaitForSeconds(1);
+        monster.MonsterFart = false;
+        monster.FartStarted = false;
         animator.SetInteger("Direction", firstDirection);
     }
 
-    void ManageMovementKeyboard()
-    { 
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
 
-        //float horizontal = this.transform.localPosition.x;
-        //float vertical = this.transform.localPosition.y;
-
-        if (animator)
-        {
-            if ((vertical > horizontal) && (vertical > 0))
-            {
-                animator.SetInteger("Direction", 1);
-            }
-
-            if ((vertical < horizontal) && (horizontal > 0))
-            {
-                animator.SetInteger("Direction", 4);
-            }
-
-            if ((vertical < horizontal) && (vertical < 0))
-            {
-                animator.SetInteger("Direction", 3);
-            }
-
-            if ((vertical > horizontal) && (horizontal < 0))
-            {
-                animator.SetInteger("Direction", 2);
-            }
-
-            animator.SetBool("Moving", (horizontal != 0f || vertical != 0f));
-            Vector3 movement = new Vector3(horizontal, vertical, 0);
-            rigidbody2D.velocity = movement * speed;
-        }
-    }
 }
