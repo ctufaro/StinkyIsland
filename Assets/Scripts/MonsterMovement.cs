@@ -15,7 +15,6 @@ public class MonsterMovement : MonoBehaviour
         monster = gameObject.AddComponent<Monster>();
     }
 
-
     // Update is called once per frame
     void Update()
     {
@@ -73,7 +72,6 @@ public class MonsterMovement : MonoBehaviour
 
     void Fart()
     {
-
         StartCoroutine("Dummy");
     }
 
@@ -98,15 +96,34 @@ public class MonsterMovement : MonoBehaviour
 
         yield return new WaitForSeconds(1);
         animator.SetTrigger("Fart");
+
+        SpawnFart();
+
         firstDirection = animator.GetInteger("Direction");
         animator.SetInteger("Direction", 0);
-
-
 
         yield return new WaitForSeconds(1);
         monster.MonsterFart = false;
         monster.FartStarted = false;
         animator.SetInteger("Direction", firstDirection);
+    }
+
+    void SpawnFart()
+    {
+        Vector3 newFartPosition = this.transform.position;
+        GameObject greenFart = Resources.Load("GreenGasser") as GameObject;
+        switch (animator.GetInteger("Direction"))
+        {
+            case(1):
+                greenFart.renderer.sortingOrder = 1;
+                break;
+            case(2):
+                newFartPosition.Set(this.transform.position.x + 1, this.transform.position.y, this.transform.position.z);
+                break;
+            default:
+                break;
+        }
+        Instantiate(greenFart, newFartPosition, Quaternion.identity);
     }
 
 

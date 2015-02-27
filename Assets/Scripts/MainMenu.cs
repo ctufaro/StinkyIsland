@@ -1,10 +1,8 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class MainMenu : MonoBehaviour {
-
-    private GUIStyle style;
-    private bool displayLabel;
 
     void Awake()
     {
@@ -13,29 +11,20 @@ public class MainMenu : MonoBehaviour {
     
     void Start()
     {
-        SetStyle();
-        StartCoroutine("Blink");
-    }
 
-    void SetStyle()
-    {
-        style = new GUIStyle();
-        style.normal.textColor = Color.red;
-        style.fontSize = 14;
-        style.fontStyle = FontStyle.Bold;
     }
 
     void OnGUI()
     {
-        if (Input.touchCount > 0 || Input.anyKey)
-        {
-            Application.LoadLevel("Level1");
-            StartGame();
-        }
+        //if (Input.touchCount > 0 || Input.anyKey)
+        //{
+        //    StartGame();
+        //}
     }
 
-    void StartGame() 
+    public void StartGame()
     {
+        Application.LoadLevel("Level1");
         GameManager.instance.SetGameState(Enums.GameState.LevelRunning);
     }
 
@@ -43,15 +32,4 @@ public class MainMenu : MonoBehaviour {
     void Settings() { }
     void Credits() { }
 
-
-    IEnumerator Blink()
-    {
-        while (true)
-        {
-            displayLabel = true;
-            yield return new WaitForSeconds(.5f);
-            displayLabel = false;
-            yield return new WaitForSeconds(.5f);
-        }
-    }
 }

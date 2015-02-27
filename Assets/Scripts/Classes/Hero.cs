@@ -8,6 +8,7 @@ public class Hero : MonoBehaviour, IHero
 {
     private List<AbstractWeapon> weapons;
     private AbstractWeapon weapon;
+    public bool isAttacking;
 
     public void Start()
     {
@@ -15,7 +16,9 @@ public class Hero : MonoBehaviour, IHero
         {
             gameObject.AddComponent<GasBlaster>(),
             gameObject.AddComponent<VaccineGun>()
-        };        
+        };
+        
+        isAttacking = false;
     }
     
     public void Attack(Enums.Button button, Vector3 position, Quaternion rotation)

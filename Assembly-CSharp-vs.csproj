@@ -85,7 +85,9 @@
      <Compile Include="Assets\Scripts\MonsterBehavior.cs" />
      <Compile Include="Assets\Scripts\MonsterMovement.cs" />
      <Compile Include="Assets\Scripts\SplashMenu.cs" />
+     <Compile Include="Assets\Scripts\Weapons\FartCloud.cs" />
      <Compile Include="Assets\Scripts\Weapons\GasBlaster.cs" />
+     <Compile Include="Assets\Scripts\Weapons\VaccineDart.cs" />
      <Compile Include="Assets\Scripts\Weapons\VaccineGun.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\SortingLayerExposed.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\TileAnimator.cs" />

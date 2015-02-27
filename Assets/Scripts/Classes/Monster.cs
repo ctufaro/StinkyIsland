@@ -112,7 +112,7 @@ public class Monster : MonoBehaviour, IMonster
             {
                 CurrentX = 0;
                 CurrentY = 0;
-                print("Farting");
+                //J//print("Farting");
                 totaltime = 0f;
                 walkssincelastfart = 0;
                 Fart();
@@ -121,7 +121,7 @@ public class Monster : MonoBehaviour, IMonster
             else
             {
                 ++walkssincelastfart;
-                //print("Moving " + t.ToString());
+                //J//print("Moving " + t.ToString());
                 switch (t)
                 {
                     case 1:
@@ -157,7 +157,7 @@ public class Monster : MonoBehaviour, IMonster
     public int FindNextDirection(Vector2 start, Vector2 target)
     {
         int res = 5;
-        print(HeroCollider);
+        //J//print(HeroCollider);
         RaycastHit2D r2d1 = new RaycastHit2D();
         //All of your codes are belong to us.
         //Shit... I meant to say:
@@ -196,7 +196,7 @@ public class Monster : MonoBehaviour, IMonster
 
             if (r2d2.distance == r2d3.distance)
             {
-                print("Bad Raycasting data again..");
+                //J//print("Bad Raycasting data again..");
                 if (Random.Range(1, 2) > 1)
                 {
                     if (lastAxis == 1)
@@ -266,8 +266,8 @@ public class Monster : MonoBehaviour, IMonster
             }
             else
             {
-                print(r2d2.distance);
-                print(r2d3.distance);
+                //J//print(r2d2.distance);
+                //J//print(r2d3.distance);
                 if (r2d2.distance > r2d3.distance && r2d2.distance > 0)
                 {
                     if (lastAxis == 1)
@@ -291,7 +291,7 @@ public class Monster : MonoBehaviour, IMonster
                     else
                     {
                         //x axis will get us further
-                        print("X Axis");
+                        //J//print("X Axis");
                         if (hero.transform.position.x > thismonster.transform.position.x)
                         {
                             res = 2;
@@ -309,7 +309,7 @@ public class Monster : MonoBehaviour, IMonster
 
                     lastAxis = 2;
                     //y axis will get us further
-                    print("Y Axis");
+                    //J//print("Y Axis");
                     //print(r2d2.distance);
                     //print(r2d3.distance);
                     if (loopsOnSameAxis >= 4)
@@ -393,5 +393,16 @@ public class Monster : MonoBehaviour, IMonster
     public void Damaged()
     {
         //throw new NotImplementedException();
+    }
+
+    public void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.name.StartsWith("Dart"))
+        {
+            //tlight.renderer.sortingLayerName = "Hero";
+            //this.rigidbody2D.velocity = Vector2.zero;
+            //Instantiate(tlight, new Vector3(this.transform.position.x, this.transform.position.y - .9f, -1), Quaternion.Euler(90f, 0, 0));
+            //this.Speed = 0f;
+        }
     }
 }

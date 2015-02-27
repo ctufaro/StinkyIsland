@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System;
 using System.Collections;
 
@@ -11,7 +12,13 @@ public class GameManager : MonoBehaviour
     public Enums.GameState gameState { get; private set; }
     public Enums.GameState stateOverride;
     private static GameManager _instance = null;
+    private int greenGasPopCount = 0;
 
+    //HUD Elements
+    private Text ScoreText;
+    private Text StinkText;
+    private Slider StinkSlider;
+    
     public static GameManager instance
     {
         get
@@ -49,6 +56,13 @@ public class GameManager : MonoBehaviour
         {
             this.gameState = stateOverride;
         }
+
+        FartCloud.GreenGasserPopped += new EventHandler(FartCloud_GreenGasserPopped);
+    }
+
+    void FartCloud_GreenGasserPopped(object sender, EventArgs e)
+    {
+        greenGasPopCount++;
     }
 
     void Update()
@@ -56,13 +70,16 @@ public class GameManager : MonoBehaviour
         switch (gameState)
         {
             case(Enums.GameState.Splash):
-                print(gameState);
+                //print(gameState);
                 break;
             case(Enums.GameState.MainMenu):
-                print(gameState);
+                //print(gameState);
+                break;
+            case (Enums.GameState.LevelRunning):
+                LevelRunning();
                 break;
             default:
-                SetGameState(Enums.GameState.LevelRunning);
+                //SetGameState(Enums.GameState.LevelRunning);
                 //print("Let's Go!!");
                 break;
         }
@@ -75,5 +92,22 @@ public class GameManager : MonoBehaviour
         {
             OnStateChange(null, EventArgs.Empty);
         }
+    }
+
+    public void LevelRunning()
+    {
+        StinkText = GameObject.FindGameObjectWithTag("StinkText").GetComponent<Text>();
+        StinkSlider = GameObject.FindGameObjectWithTag("StinkSlider").GetComponent<Slider>();
+        ScoreText = GameObject.FindGameObjectWithTag("ScoreText").GetComponent<Text>();
+        
+        //lots of things to do here
+        //1. Count prefabs of farts
+        //2. Increment/Decrement Stink Meter
+        StinkText.text = GameObject.FindGameObjectsWithTag("GreenGasser").Length.ToString();
+        StinkSlider.value = Int32.Parse(StinkText.text);
+
+        //3. Increment Score on green farts popping
+        ScoreText.text = "Score: " + (greenGasPopCount * 100).ToString();
+            
     }
 }

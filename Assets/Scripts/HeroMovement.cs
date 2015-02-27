@@ -80,9 +80,13 @@ public class HeroMovement : MonoBehaviour
 
             switch (tStick.GetFourWayDir())
             {
-                case(TouchStick.StickDir.U):
+                case (TouchStick.StickDir.UL):
+                case (TouchStick.StickDir.UR):
+                case (TouchStick.StickDir.U):
                     animator.SetInteger("Direction", 1);
                     break;
+                case (TouchStick.StickDir.DL):
+                case (TouchStick.StickDir.DR):
                 case (TouchStick.StickDir.D):
                     animator.SetInteger("Direction", 3);
                     break;

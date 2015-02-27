@@ -5,9 +5,11 @@ public class Level1 : MonoBehaviour {
     int MonsterCounter = 0;
 	// Use this for initialization
 	void Start () {
-        AddMonster(new Vector2(5.5f,13.5f));
-        AddMonster(new Vector2(-4.2f,13.22f));
-        AddMonster(new Vector2(-4.2f,5.47f));
+
+        AddMonster(new Vector2(5.5f, 13.5f));
+        AddMonster(new Vector2(-4.2f, 13.22f));
+        //AddMonster(new Vector2(-4.2f, 5.47f));
+        
 	}
 	
 	// Update is called once per frame
