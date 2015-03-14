@@ -75,6 +75,7 @@
      <Compile Include="Assets\Scripts\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\Classes\Hero.cs" />
      <Compile Include="Assets\Scripts\Classes\Monster.cs" />
+     <Compile Include="Assets\Scripts\Collectible.cs" />
      <Compile Include="Assets\Scripts\Enums\Enums.cs" />
      <Compile Include="Assets\Scripts\FartCollider.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />

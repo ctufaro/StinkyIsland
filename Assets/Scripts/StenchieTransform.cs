@@ -3,6 +3,7 @@ using System.Collections;
 
 public class StenchieTransform : MonoBehaviour {
 
+    public AudioClip transformSound;
     private bool played = false;
     private bool transformed = false;
     
@@ -31,6 +32,7 @@ public class StenchieTransform : MonoBehaviour {
     void Magic()
     {
         GameObject blue = Instantiate((Resources.Load("BlueMagic")), new Vector3(this.transform.position.x,this.transform.position.y,-1f), Quaternion.identity) as GameObject;
+        AudioSource.PlayClipAtPoint(transformSound, this.transform.position);
     }
 
     void OnCollisionEnter2D(Collision2D collision)
