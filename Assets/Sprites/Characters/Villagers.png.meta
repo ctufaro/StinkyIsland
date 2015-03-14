@@ -1,0 +1,135 @@
+fileFormatVersion: 2
+guid: 97b6c5894dc901342a2eb83fe7fc4ff8
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Villagers_0
+    21300002: Villagers_1
+    21300004: Villagers_2
+    21300006: Villagers_3
+    21300008: Villagers_4
+    21300010: Villagers_5
+    21300012: Villagers_6
+    21300014: Villagers_7
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Villagers_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 253
+        width: 112
+        height: 228
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Villagers_1
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 253
+        width: 122
+        height: 228
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Villagers_2
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 253
+        width: 151
+        height: 228
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Villagers_3
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 253
+        width: 150
+        height: 228
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Villagers_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 113
+        height: 228
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Villagers_5
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 0
+        width: 121
+        height: 228
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Villagers_6
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 0
+        width: 151
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Villagers_7
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 0
+        width: 150
+        height: 228
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

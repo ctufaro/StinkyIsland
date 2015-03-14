@@ -22,10 +22,10 @@ public class VaccineGun : AbstractWeapon
     public override void Engage(Vector3 position, Quaternion rotation)
     {        
         Rigidbody2D dartPrefab;
-        string dartSortingLayer = "Default";
+        string dartSortingLayer = "Hero";
         GameObject dart = Resources.Load("Dart") as GameObject;
         GameObject puff = Resources.Load("SmokePuff") as GameObject;
-        puff.renderer.sortingLayerName = "Puff";
+        puff.renderer.sortingLayerName = "Hero";
         Vector3 moveVector;
 
         //TODO:refactor this
@@ -37,28 +37,28 @@ public class VaccineGun : AbstractWeapon
                 Instantiate(puff, new Vector3(moveVector.x, moveVector.y - .2f, 0f), Quaternion.identity);
                 dartPrefab = Instantiate(dart.GetComponent<Rigidbody2D>(), moveVector, Quaternion.identity) as Rigidbody2D;
                 dartPrefab.AddForce(transform.up * speed);
-                dartSortingLayer = "Dart";
+                dartSortingLayer = "Hero";
                 break;
             case (2):
                 moveVector = new Vector3(transform.position.x - 0.576f, transform.position.y - 0.205f, 0f);
                 Instantiate(puff, new Vector3(moveVector.x + .2f,moveVector.y,0f), Quaternion.identity);
                 dartPrefab = Instantiate(dart.GetComponent<Rigidbody2D>(), moveVector, Quaternion.Euler(0, 0, 90f)) as Rigidbody2D;
                 dartPrefab.AddForce(-transform.right * speed);
-                dartSortingLayer = "Dart";
+                dartSortingLayer = "Hero";
                 break;
             case (3):
                 moveVector = new Vector3(transform.position.x - 0.049f, transform.position.y - 0.657f, 0f);
                 Instantiate(puff, new Vector3(moveVector.x, moveVector.y + .2f, 0f), Quaternion.identity);
                 dartPrefab = Instantiate(dart.GetComponent<Rigidbody2D>(), moveVector, Quaternion.Euler(0, 0, 180f)) as Rigidbody2D;
                 dartPrefab.AddForce(-transform.up * speed);
-                dartSortingLayer = "Dart";
+                dartSortingLayer = "Hero";
                 break;
             case (4):
                 moveVector = new Vector3(transform.position.x + 0.578f, transform.position.y - 0.213f, 0f);
                 Instantiate(puff, new Vector3(moveVector.x - .2f, moveVector.y, 0f), Quaternion.identity);
                 dartPrefab = Instantiate(dart.GetComponent<Rigidbody2D>(), moveVector, Quaternion.Euler(0, 0, 270f)) as Rigidbody2D;
                 dartPrefab.AddForce(transform.right * speed);
-                dartSortingLayer = "Dart";
+                dartSortingLayer = "Hero";
                 break;
             default:
                 dartPrefab = null;
@@ -66,7 +66,11 @@ public class VaccineGun : AbstractWeapon
         }
 
         dartPrefab.renderer.sortingLayerName = dartSortingLayer;
-        Destroy(dartPrefab.gameObject, 2f);
+
+        if (dartPrefab)
+        {
+            Destroy(dartPrefab.gameObject, 2f);
+        }
 
     }
 

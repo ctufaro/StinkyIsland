@@ -24,7 +24,7 @@ public class MainMenu : MonoBehaviour {
 
     public void StartGame()
     {
-        Application.LoadLevel("Level1");
+        Application.LoadLevel("Level1Develop");
         GameManager.instance.SetGameState(Enums.GameState.LevelRunning);
     }
 

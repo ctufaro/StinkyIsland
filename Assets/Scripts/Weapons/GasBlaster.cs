@@ -6,11 +6,15 @@ using UnityEngine;
 
 public class GasBlaster : AbstractWeapon
 {
+    public AudioClip blastSound;
     private ParticleSystem[] gasBlasterSystem;
     private ParticleSystem gasBlaster;
     private CircleCollider2D gasCollider; 
     private Animator heroAnimator;    
     private int direction;
+
+    public static event EventHandler OnDisengage;
+    public static event EventHandler OnEngage;
 
     public void Awake()
     {
@@ -38,12 +42,21 @@ public class GasBlaster : AbstractWeapon
 
         //engage collider
         gasCollider.enabled = true;
+
+        //notify subscribers weapon has been engaged
+        if (OnEngage != null)
+        {
+            OnEngage(this.gameObject, EventArgs.Empty);
+        }
     }
 
     private void PointSpray()
     {
         Quaternion rotation;
         Vector3 directionMotion = new Vector3(rigidbody2D.velocity.x * -1, rigidbody2D.velocity.y * -1, 0);
+
+        //print(directionMotion);
+        
         if (directionMotion != Vector3.zero)
         {
             rotation = Quaternion.LookRotation(directionMotion);
@@ -79,12 +92,13 @@ public class GasBlaster : AbstractWeapon
         else
         {
             //if our hero has stopped moving and is still facing a different direction, reset the Blast Directions
-            if(direction != heroAnimator.GetInteger("Direction"))
-            {
-                ResetBlastDirection();
-            }
+            //if(direction != heroAnimator.GetInteger("Direction"))
+            //{
+            //    ResetBlastDirection();
+            //}
+            ResetBlastDirection();
         }
-        
+        //print(heroAnimator.GetInteger("Direction"));
     }
 
     private void ResetBlastDirection()
@@ -124,6 +138,12 @@ public class GasBlaster : AbstractWeapon
 
         //disengage collider
         gasCollider.enabled = false;
+
+        //notify subscribers weapon has been disengaged
+        if (OnDisengage != null)
+        {
+            OnDisengage(this.gameObject, EventArgs.Empty);
+        }
     }
 
     private void ToggleSpray(bool on)
@@ -145,7 +165,7 @@ public class GasBlaster : AbstractWeapon
         foreach (var spray in gasBlasterSystem)
         {
             spray.loop = true;
-            spray.renderer.sortingLayerName = "Spray";
+            spray.renderer.sortingLayerName = "Hero";
         }
     }
 }

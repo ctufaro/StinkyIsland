@@ -72,9 +72,11 @@
      <Compile Include="Assets\Levels\Level1.cs" />
      <Compile Include="Assets\Scripts\Abstract\AbstractFart.cs" />
      <Compile Include="Assets\Scripts\Abstract\AbstractWeapon.cs" />
+     <Compile Include="Assets\Scripts\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\Classes\Hero.cs" />
      <Compile Include="Assets\Scripts\Classes\Monster.cs" />
      <Compile Include="Assets\Scripts\Enums\Enums.cs" />
+     <Compile Include="Assets\Scripts\FartCollider.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\HeroBehavior.cs" />
      <Compile Include="Assets\Scripts\HeroMovement.cs" />
@@ -85,10 +87,13 @@
      <Compile Include="Assets\Scripts\MonsterBehavior.cs" />
      <Compile Include="Assets\Scripts\MonsterMovement.cs" />
      <Compile Include="Assets\Scripts\SplashMenu.cs" />
+     <Compile Include="Assets\Scripts\StenchieBehavior.cs" />
+     <Compile Include="Assets\Scripts\StenchieTransform.cs" />
      <Compile Include="Assets\Scripts\Weapons\FartCloud.cs" />
      <Compile Include="Assets\Scripts\Weapons\GasBlaster.cs" />
      <Compile Include="Assets\Scripts\Weapons\VaccineDart.cs" />
      <Compile Include="Assets\Scripts\Weapons\VaccineGun.cs" />
+     <Compile Include="Assets\Scripts\ZItemOrder.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\SortingLayerExposed.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\TileAnimator.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\TiledMap.cs" />

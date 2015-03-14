@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     private Text ScoreText;
     private Text StinkText;
     private Slider StinkSlider;
+    private Image HealthImage;
     
     public static GameManager instance
     {
@@ -58,6 +59,19 @@ public class GameManager : MonoBehaviour
         }
 
         FartCloud.GreenGasserPopped += new EventHandler(FartCloud_GreenGasserPopped);
+        FartCollider.OnGameObjectEnter += new EventHandler(FartCollider_OnGameObjectEnter);
+    }
+
+    void FartCollider_OnGameObjectEnter(object sender, EventArgs e)
+    {
+        if (sender is Collider2D)
+        {
+            string tag = ((Collider2D)sender).tag;
+            if (tag.Equals("Player"))
+            {
+                PlayerDamage();
+            }
+        }
     }
 
     void FartCloud_GreenGasserPopped(object sender, EventArgs e)
@@ -85,6 +99,23 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    IEnumerator ScreenFlash(float aTime)
+    {
+        for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / aTime)
+        {
+            HealthImage.color = new Color(HealthImage.color.r, HealthImage.color.g, HealthImage.color.b, Mathf.Lerp(.8f, 0f, t));
+            yield return null;
+        }
+    }
+
+    void PlayerDamage()
+    {
+        if (HealthImage != null)
+        {
+            StartCoroutine(ScreenFlash(.3f));        
+        }
+    }
+
     public void SetGameState(Enums.GameState gameState)
     {
         this.gameState = gameState;
@@ -94,11 +125,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    //MAYBE KILLING RESOURCES    
     public void LevelRunning()
     {
         StinkText = GameObject.FindGameObjectWithTag("StinkText").GetComponent<Text>();
         StinkSlider = GameObject.FindGameObjectWithTag("StinkSlider").GetComponent<Slider>();
         ScoreText = GameObject.FindGameObjectWithTag("ScoreText").GetComponent<Text>();
+        HealthImage = GameObject.FindGameObjectWithTag("HealthImage").GetComponent<Image>();
         
         //lots of things to do here
         //1. Count prefabs of farts
@@ -110,4 +143,5 @@ public class GameManager : MonoBehaviour
         ScoreText.text = "Score: " + (greenGasPopCount * 100).ToString();
             
     }
+
 }
