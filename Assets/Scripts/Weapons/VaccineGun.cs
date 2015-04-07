@@ -8,6 +8,10 @@ public class VaccineGun : AbstractWeapon
 {
     private Animator heroAnimator;
     private float speed = 500f;
+    private static bool empty;
+    public Vector3 startPosition;
+
+    public static event EventHandler OnEngage;
 
     public override string Name
     {
@@ -19,8 +23,26 @@ public class VaccineGun : AbstractWeapon
         heroAnimator = this.GetComponent<Animator>();        
     }
 
+    public void Update()
+    {
+
+    }
+
+    public static void FillMeter(bool isActive)
+    {
+        empty = isActive;
+    }
+
     public override void Engage(Vector3 position, Quaternion rotation)
-    {        
+    {
+        if (!empty)
+            return;
+
+        if (OnEngage != null)
+        {
+            OnEngage(null, EventArgs.Empty);
+        }
+
         Rigidbody2D dartPrefab;
         string dartSortingLayer = "Hero";
         GameObject dart = Resources.Load("Dart") as GameObject;

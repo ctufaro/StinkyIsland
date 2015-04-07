@@ -22,6 +22,7 @@ public class CameraFollow : MonoBehaviour
     public void ResetLevel()
     {
         Application.LoadLevel(1);
+        GameManager.instance.SetGameState(Enums.GameState.LevelReset);
     }
 
     // Update is called once per frame

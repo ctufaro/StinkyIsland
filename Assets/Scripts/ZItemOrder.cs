@@ -27,16 +27,22 @@ public class ZItemOrder : MonoBehaviour {
 
     void OnTriggerExit2D(Collider2D coll)
     {
-        this.tempRend.sortingLayerName = sortingLayer;
-        this.tempRend.sortingOrder = sortingOrder;
+        if (coll.tag.Equals("Player") || coll.tag.Equals("Enemy"))
+        {
+            this.tempRend.sortingLayerName = sortingLayer;
+            this.tempRend.sortingOrder = sortingOrder;
+        }
 
     }
 
     void OnTriggerEnter2D(Collider2D coll)
     {
         //if somethine enters the trigger, change the sorting layer
-        this.tempRend.sortingLayerName = "Hero";
-        this.tempRend.sortingOrder = 100;
+        if (coll.tag.Equals("Player") || coll.tag.Equals("Enemy"))
+        {
+            this.tempRend.sortingLayerName = "Hero";
+            this.tempRend.sortingOrder = 100;
+        }
     }
 
     //void LateUpdate()

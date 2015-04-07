@@ -38,10 +38,10 @@ public class HeroBehavior : MonoBehaviour {
         #endregion
 
         #region Button A Double Tap
-        if (CFInput.ctrl.GetZone(0).JustDoubleTapped())
-        {
-            print("double tapped");
-        }
+        //if (CFInput.ctrl.GetZone(0).JustDoubleTapped())
+        //{
+        //    print("double tapped");
+        //}
         #endregion
 
         #region Button B Fire

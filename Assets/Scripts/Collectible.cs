@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
 
 public class Collectible : MonoBehaviour {
 
     public AudioClip pickUpSound;
-    
+    public static event EventHandler OnItemPickUp;
+
     // Use this for initialization
 	void Start () {
 	
@@ -23,6 +25,12 @@ public class Collectible : MonoBehaviour {
             {
                 AudioSource.PlayClipAtPoint(pickUpSound, this.transform.position);
                 Destroy(this.gameObject);
+
+                if (OnItemPickUp != null)
+                {
+                    OnItemPickUp(this.gameObject, EventArgs.Empty);
+                }
+
             }
         }
     }

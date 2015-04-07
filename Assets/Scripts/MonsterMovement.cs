@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// REPLACING THIS WITH STENCHIE CLASS
+/// </summary>
 public class MonsterMovement : MonoBehaviour
 {
 

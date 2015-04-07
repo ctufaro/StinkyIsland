@@ -7,12 +7,13 @@ public class Enums : ScriptableObject {
     {
         Splash,
         MainMenu,
-        //Intro,
-        //GetReady,
+        Intro,
+        GetReady,
         LevelRunning,
         LevelComplete,
         LostLife,
-        GameOver
+        GameOver,
+        LevelReset
     }
 
     public enum MonsterType
@@ -28,5 +29,13 @@ public class Enums : ScriptableObject {
         B,
         C,
         D
+    }
+
+    public enum Direction
+    {
+        Up = 1,
+        Left = 2,
+        Down = 3,
+        Right = 4
     }
 }

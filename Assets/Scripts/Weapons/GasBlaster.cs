@@ -12,21 +12,27 @@ public class GasBlaster : AbstractWeapon
     private CircleCollider2D gasCollider; 
     private Animator heroAnimator;    
     private int direction;
+    private static bool empty;
 
     public static event EventHandler OnDisengage;
     public static event EventHandler OnEngage;
 
     public void Awake()
     {
+        empty = false;
         gasBlasterSystem = this.GetComponentsInChildren<ParticleSystem>();
         gasCollider = this.GetComponentInChildren<CircleCollider2D>();
         heroAnimator = this.GetComponent<Animator>();
         gasBlaster = gasBlasterSystem[0];
-        ToggleSpray(false);
+        ToggleSpray(empty);
         ConfigureSpray();
     }
-    
-    
+
+    public static void FillMeter(bool isActive)
+    {
+        empty = isActive;
+    }
+
     public override string Name
     {
         get { return "GasBlaster"; }
@@ -37,11 +43,11 @@ public class GasBlaster : AbstractWeapon
         //point spray
         PointSpray();
         
-        //shoot spray
-        ToggleSpray(true);
+        //shoot is empty is false        
+        ToggleSpray(empty);
 
         //engage collider
-        gasCollider.enabled = true;
+        gasCollider.enabled = empty;
 
         //notify subscribers weapon has been engaged
         if (OnEngage != null)
