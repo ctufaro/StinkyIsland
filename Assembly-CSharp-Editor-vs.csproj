@@ -52,6 +52,34 @@
      <Compile Include="Assets\JMO Assets\Cartoon FX Easy Editor\Editor\CFXEasyEditor.cs" />
      <Compile Include="Assets\JMO Assets\Cartoon FX\Editor\CFX_InspectorHelpEditor.cs" />
      <Compile Include="Assets\JMO Assets\Cartoon FX\Editor\CFX_SpawnSystemEditor.cs" />
+     <Compile Include="Assets\ThirdParty\Spriter2Unity\Editor\GUI\SpriterEntityInspector.cs" />
+     <Compile Include="Assets\ThirdParty\Spriter2Unity\Editor\Spriter\BoneRef.cs" />
+     <Compile Include="Assets\ThirdParty\Spriter2Unity\Editor\Spriter\BoneTimelineKey.cs" />
+     <Compile Include="Assets\ThirdParty\Spriter2Unity\Editor\Spriter\Entity.cs" />
+     <Compile Include="Assets\ThirdParty\Spriter2Unity\Editor\Spriter\File.cs" />
+     <Compile Include="Assets\ThirdParty\Spriter2Unity\Editor\Spriter\Folder.cs" />
+     <Compile Include="Assets\ThirdParty\Spriter2Unity\Editor\Spriter\Key.cs" />
+     <Compile Include="Assets\ThirdParty\Spriter2Unity\Editor\Spriter\KeyElem.cs" />
+     <Compile Include="Assets\ThirdParty\Spriter2Unity\Editor\Spriter\MainlineKey.cs" />
+     <Compile Include="Assets\ThirdParty\Spriter2Unity\Editor\Spriter\ObjectRef.cs" />
+     <Compile Include="Assets\ThirdParty\Spriter2Unity\Editor\Spriter\ObjectType.cs" />
+     <Compile Include="Assets\ThirdParty\Spriter2Unity\Editor\Spriter\Ref.cs" />
+     <Compile Include="Assets\ThirdParty\Spriter2Unity\Editor\Spriter\ScmlObject.cs" />
+     <Compile Include="Assets\ThirdParty\Spriter2Unity\Editor\Spriter\SpatialInfo.cs" />
+     <Compile Include="Assets\ThirdParty\Spriter2Unity\Editor\Spriter\SpatialTimelineKey.cs" />
+     <Compile Include="Assets\ThirdParty\Spriter2Unity\Editor\Spriter\SpriteTimelineKey.cs" />
+     <Compile Include="Assets\ThirdParty\Spriter2Unity\Editor\Spriter\SpriterAnimation.cs" />
+     <Compile Include="Assets\ThirdParty\Spriter2Unity\Editor\Spriter\Timeline.cs" />
+     <Compile Include="Assets\ThirdParty\Spriter2Unity\Editor\Spriter\TimelineKey.cs" />
+     <Compile Include="Assets\ThirdParty\Spriter2Unity\Editor\Unity\AnimationBuilder.cs" />
+     <Compile Include="Assets\ThirdParty\Spriter2Unity\Editor\Unity\AnimationCurveBuilder.cs" />
+     <Compile Include="Assets\ThirdParty\Spriter2Unity\Editor\Unity\PrefabBuilder.cs" />
+     <Compile Include="Assets\ThirdParty\Spriter2Unity\Editor\Unity\ScmlPostProcessor.cs" />
+     <Compile Include="Assets\ThirdParty\Spriter2Unity\Editor\Utils\AnimationCurveUtils.cs" />
+     <Compile Include="Assets\ThirdParty\Spriter2Unity\Editor\Utils\AssetUtils.cs" />
+     <Compile Include="Assets\ThirdParty\Spriter2Unity\Editor\Utils\PrefabUtils.cs" />
+     <Compile Include="Assets\ThirdParty\Spriter2Unity\Editor\Utils\XmlUtils.cs" />
+     <Compile Include="Assets\ThirdParty\Spriter2Unity\Example\Editor\AnimationTestScriptInspector.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Editor\CustomTiledImporterAttribute.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Editor\ICustomTiledImporter.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Editor\ImportTiled2Unity.Material.cs" />
@@ -68,9 +96,10 @@
      <None Include="Assets\Tiled2Unity\Prefabs\_ReadMe.txt" />
      <None Include="Assets\Tiled2Unity\Shaders\shaTiledMap.shader" />
      <None Include="Assets\Tiled2Unity\Imported\Island.tiled2unity.xml" />
+     <None Include="Assets\ThirdParty\Spriter2Unity\Example\Spriter Project\GreyGuy\Copyright_Information_Please_Read.txt" />
      <None Include="Assets\Shaders\HSVADefault.shader" />
      <None Include="Assets\Shaders\HSVDefault.shader" />
-     <None Include="Assets\Control-Freak-ReadMe.txt" />
+     <None Include="Assets\Docs\Control-Freak-ReadMe.txt" />
      <None Include="Assets\JMO Assets\Cartoon FX Easy Editor\CartoonFX Easy Editor Readme.txt" />
      <None Include="Assets\Tiled2Unity\Materials\_ReadMe.txt" />
      <None Include="Assets\JMO Assets\!JMO Assets Readme.txt" />
@@ -91,6 +120,15 @@
  </Reference>
  <Reference Include="JMOAssets">
  <HintPath>C:/Users/Chris/My Projects/StinkyIsland/Assets/JMO Assets/Editor/JMOAssets.dll</HintPath>
+ </Reference>
+ <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
+ <HintPath>C:/Users/Chris/My Projects/StinkyIsland/Assets/UnityVS/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
+ </Reference>
+ <Reference Include="SyntaxTree.VisualStudio.Unity.Messaging">
+ <HintPath>C:/Users/Chris/My Projects/StinkyIsland/Assets/UnityVS/Editor/SyntaxTree.VisualStudio.Unity.Messaging.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityVS.VersionSpecific">
+ <HintPath>C:/Users/Chris/My Projects/StinkyIsland/Assets/UnityVS/Editor/UnityVS.VersionSpecific.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Graphs">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>

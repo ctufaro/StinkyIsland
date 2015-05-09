@@ -97,6 +97,9 @@
      <Compile Include="Assets\Scripts\Weapons\VaccineDart.cs" />
      <Compile Include="Assets\Scripts\Weapons\VaccineGun.cs" />
      <Compile Include="Assets\Scripts\ZItemOrder.cs" />
+     <Compile Include="Assets\ThirdParty\Spriter2Unity\Example\Scripts\AnimationTestScript.cs" />
+     <Compile Include="Assets\ThirdParty\Spriter2Unity\Runtime\SortingOrderUpdate.cs" />
+     <Compile Include="Assets\ThirdParty\Spriter2Unity\Runtime\SpriterEntity.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\SortingLayerExposed.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\TileAnimator.cs" />
      <Compile Include="Assets\Tiled2Unity\Scripts\Runtime\TiledMap.cs" />
@@ -105,9 +108,10 @@
      <None Include="Assets\Tiled2Unity\Prefabs\_ReadMe.txt" />
      <None Include="Assets\Tiled2Unity\Shaders\shaTiledMap.shader" />
      <None Include="Assets\Tiled2Unity\Imported\Island.tiled2unity.xml" />
+     <None Include="Assets\ThirdParty\Spriter2Unity\Example\Spriter Project\GreyGuy\Copyright_Information_Please_Read.txt" />
      <None Include="Assets\Shaders\HSVADefault.shader" />
      <None Include="Assets\Shaders\HSVDefault.shader" />
-     <None Include="Assets\Control-Freak-ReadMe.txt" />
+     <None Include="Assets\Docs\Control-Freak-ReadMe.txt" />
      <None Include="Assets\JMO Assets\Cartoon FX Easy Editor\CartoonFX Easy Editor Readme.txt" />
      <None Include="Assets\Tiled2Unity\Materials\_ReadMe.txt" />
      <None Include="Assets\JMO Assets\!JMO Assets Readme.txt" />

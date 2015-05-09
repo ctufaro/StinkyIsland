@@ -52,9 +52,10 @@
      <None Include="Assets\Tiled2Unity\Prefabs\_ReadMe.txt" />
      <None Include="Assets\Tiled2Unity\Shaders\shaTiledMap.shader" />
      <None Include="Assets\Tiled2Unity\Imported\Island.tiled2unity.xml" />
+     <None Include="Assets\ThirdParty\Spriter2Unity\Example\Spriter Project\GreyGuy\Copyright_Information_Please_Read.txt" />
      <None Include="Assets\Shaders\HSVADefault.shader" />
      <None Include="Assets\Shaders\HSVDefault.shader" />
-     <None Include="Assets\Control-Freak-ReadMe.txt" />
+     <None Include="Assets\Docs\Control-Freak-ReadMe.txt" />
      <None Include="Assets\JMO Assets\Cartoon FX Easy Editor\CartoonFX Easy Editor Readme.txt" />
      <None Include="Assets\Tiled2Unity\Materials\_ReadMe.txt" />
      <None Include="Assets\JMO Assets\!JMO Assets Readme.txt" />
