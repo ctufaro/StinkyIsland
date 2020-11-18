@@ -163,7 +163,7 @@ public class Monster : MonoBehaviour, IMonster
         //Shit... I meant to say:
         //All of the code here should be using the Vector2 parameters instead of accessing the monster/hero directly
 
-        foreach (RaycastHit2D hit in Physics2D.CircleCastAll(thismonster.transform.position, thismonster.renderer.bounds.extents.x, hero.transform.position))
+        foreach (RaycastHit2D hit in Physics2D.CircleCastAll(thismonster.transform.position, thismonster.GetComponent<Renderer>().bounds.extents.x, hero.transform.position))
         {
             if (hit.collider != HeroCollider && hit.collider != thismonstercollider)
             {
@@ -175,7 +175,7 @@ public class Monster : MonoBehaviour, IMonster
         if (r2d1.collider != null && r2d1.collider != HeroCollider)
         {
             RaycastHit2D r2d2 = new RaycastHit2D();
-            foreach (RaycastHit2D hit in Physics2D.CircleCastAll(thismonster.transform.position, thismonster.renderer.bounds.extents.y, new Vector2(hero.transform.position.x, thismonster.transform.position.y)))
+            foreach (RaycastHit2D hit in Physics2D.CircleCastAll(thismonster.transform.position, thismonster.GetComponent<Renderer>().bounds.extents.y, new Vector2(hero.transform.position.x, thismonster.transform.position.y)))
             {
                 if (hit.collider != HeroCollider && hit.collider != thismonstercollider)
                 {
@@ -185,7 +185,7 @@ public class Monster : MonoBehaviour, IMonster
             }
 
             RaycastHit2D r2d3 = new RaycastHit2D();
-            foreach (RaycastHit2D hit in Physics2D.CircleCastAll(thismonster.transform.position, thismonster.renderer.bounds.extents.x, new Vector2(thismonster.transform.position.x, hero.transform.position.y)))
+            foreach (RaycastHit2D hit in Physics2D.CircleCastAll(thismonster.transform.position, thismonster.GetComponent<Renderer>().bounds.extents.x, new Vector2(thismonster.transform.position.x, hero.transform.position.y)))
             {
                 if (hit.collider != HeroCollider && hit.collider != thismonstercollider)
                 {

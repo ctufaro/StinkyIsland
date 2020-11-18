@@ -43,7 +43,7 @@ public class GasBlaster : AbstractWeapon
     private void PointSpray()
     {
         Quaternion rotation;
-        Vector3 directionMotion = new Vector3(rigidbody2D.velocity.x * -1, rigidbody2D.velocity.y * -1, 0);
+        Vector3 directionMotion = new Vector3(GetComponent<Rigidbody2D>().velocity.x * -1, GetComponent<Rigidbody2D>().velocity.y * -1, 0);
         if (directionMotion != Vector3.zero)
         {
             rotation = Quaternion.LookRotation(directionMotion);
@@ -145,7 +145,7 @@ public class GasBlaster : AbstractWeapon
         foreach (var spray in gasBlasterSystem)
         {
             spray.loop = true;
-            spray.renderer.sortingLayerName = "Spray";
+            spray.GetComponent<Renderer>().sortingLayerName = "Spray";
         }
     }
 }

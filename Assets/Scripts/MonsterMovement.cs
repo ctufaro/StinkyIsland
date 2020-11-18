@@ -64,7 +64,7 @@ public class MonsterMovement : MonoBehaviour
 
                     animator.SetBool("Moving", (horizontal != 0f || vertical != 0f));
                     Vector3 movement = new Vector3(horizontal, vertical, 0);
-                    rigidbody2D.velocity = movement * monster.Speed;
+                    GetComponent<Rigidbody2D>().velocity = movement * monster.Speed;
                 }
             }
         }
@@ -115,7 +115,7 @@ public class MonsterMovement : MonoBehaviour
         switch (animator.GetInteger("Direction"))
         {
             case(1):
-                greenFart.renderer.sortingOrder = 1;
+                greenFart.GetComponent<Renderer>().sortingOrder = 1;
                 break;
             case(2):
                 newFartPosition.Set(this.transform.position.x + 1, this.transform.position.y, this.transform.position.z);

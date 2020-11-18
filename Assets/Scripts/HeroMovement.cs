@@ -55,7 +55,7 @@ public class HeroMovement : MonoBehaviour
 
             animator.SetBool("Moving", (horizontal != 0f || vertical != 0f));
             Vector3 movement = new Vector3(horizontal, vertical, 0);
-            rigidbody2D.velocity = movement * speed;
+            GetComponent<Rigidbody2D>().velocity = movement * speed;
         }
     }
 
@@ -69,13 +69,13 @@ public class HeroMovement : MonoBehaviour
             if (tStick.GetFourWayDir() == TouchStick.StickDir.NEUTRAL)
             {
                 animator.SetBool("Moving",false);
-                rigidbody2D.velocity = Vector2.zero;
+                GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             }
             else
             {
                 animator.SetBool("Moving", (horizontal != 0f || vertical != 0f));
                 Vector3 movement = new Vector3(horizontal, vertical, 0);
-                rigidbody2D.velocity = movement * speed;
+                GetComponent<Rigidbody2D>().velocity = movement * speed;
             }
 
             switch (tStick.GetFourWayDir())

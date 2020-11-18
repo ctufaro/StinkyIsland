@@ -25,7 +25,7 @@ public class VaccineGun : AbstractWeapon
         string dartSortingLayer = "Default";
         GameObject dart = Resources.Load("Dart") as GameObject;
         GameObject puff = Resources.Load("SmokePuff") as GameObject;
-        puff.renderer.sortingLayerName = "Puff";
+        puff.GetComponent<Renderer>().sortingLayerName = "Puff";
         Vector3 moveVector;
 
         //TODO:refactor this
@@ -65,7 +65,7 @@ public class VaccineGun : AbstractWeapon
                 break;
         }
 
-        dartPrefab.renderer.sortingLayerName = dartSortingLayer;
+        dartPrefab.GetComponent<Renderer>().sortingLayerName = dartSortingLayer;
         Destroy(dartPrefab.gameObject, 2f);
 
     }

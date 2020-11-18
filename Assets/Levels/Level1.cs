@@ -24,6 +24,6 @@ public class Level1 : MonoBehaviour {
         newMonster.name = "Monster"+MonsterCounter.ToString();
         Rigidbody2D nm = Instantiate(newMonster.GetComponent<Rigidbody2D>(), position, Quaternion.identity) as Rigidbody2D;
 
-        nm.renderer.sortingLayerName = "Monster";
+        nm.GetComponent<Renderer>().sortingLayerName = "Monster";
     }
 }
